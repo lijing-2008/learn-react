@@ -1,0 +1,26 @@
+.coder-appear{
+    transform: translateX(-150px);
+}
+.coder-appear-active{
+    transform: translateX(0);
+    transition: transform 2s ease;
+}
+/*进入动画*/
+.coder-enter{
+    opacity: 0;
+}
+.coder-enter-active{
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+.coder-enter-done{
+    color: #ff8189;
+}
+/*离开动画*/
+.coder-exit{
+    opacity: 1;
+}
+.coder-exit-active{
+    opacity: 0;
+    transition: opacity 2s ease;
+}
