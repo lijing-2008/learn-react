@@ -25,17 +25,26 @@ import {Suspense} from "react";
 // import store from "./17_redux融入react/store";
 // import App from "./18_redux-toolkit/App";
 // import store from "./18_redux-toolkit/store";
-import App from "./19_react-router路由/App";
+// import App from "./19_react-router路由/App";
 import {HashRouter} from "react-router-dom"
+import App from "./20_react-hooks/App";
+import {ThemeContext, TokenContext, UserContext} from "./20_react-hooks/context"
 // 编写react代码
 const root = ReactDOM.createRoot(document.querySelector("#root"))
+
 root.render(
 	// <StrictMode>
 	// // // // <ThemeProvider theme={{color: "#ff8189", fontSize: "30px"}}>
 	// // // 	<Provider store={store}>
 	<HashRouter>
 		<Suspense fallback={<h3>loading....</h3>}>
-			<App/>
+			<UserContext.Provider value={{name: "coder", level: 100}}>
+				<TokenContext.Provider value={"token12345"}>
+					<ThemeContext.Provider value={{color: "red", fontSize: "30px"}}>
+						<App/>
+					</ThemeContext.Provider>
+				</TokenContext.Provider>
+			</UserContext.Provider>
 		</Suspense>
 	</HashRouter>
 	// // 	</Provider>

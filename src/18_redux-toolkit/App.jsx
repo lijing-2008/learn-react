@@ -1,10 +1,10 @@
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import "./style.css"
-import {useSelector} from "react-redux";
+import {shallowEqual, useSelector} from "react-redux";
 
 function App() {
-	const counter = useSelector(state => state.counter.counter)
+	const counter = useSelector(state => state.counter.counter, shallowEqual)
 	return (
 		<div>
 			<h2>App counter:{counter}</h2>
